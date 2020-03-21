@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with Anchor 1`] = `
+<a
+  href="/questions/1"
+  onClick={[Function]}
+  title="Question1"
+>
+  Question1
+</a>
+`;

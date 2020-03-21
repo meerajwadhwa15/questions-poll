@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with Main 1`] = `
+Array [
+  <header>
+    <h1>
+      Question Poll
+    </h1>
+  </header>,
+  <main
+    className="container"
+  >
+    <div
+      className="test"
+    >
+      Test Element
+    </div>
+  </main>,
+]
+`;

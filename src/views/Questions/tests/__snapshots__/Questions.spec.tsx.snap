@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questions Enzyme testing Matches the snapshot with QuestionsList 1`] = `
+<div>
+  <h1
+    className="page-title"
+  >
+    Questions
+  </h1>
+  <div
+    className="questions-list"
+  >
+    <div
+      className="card"
+    >
+      <a
+        href="/questions/1"
+        onClick={[Function]}
+        rel="noopener"
+        title="Favourite programming language?"
+      >
+        <h3
+          className="card__title ellipsis"
+        >
+          Favourite programming language?
+        </h3>
+        <p>
+          Published Date: 
+          <strong>
+            12/Jun/2020
+          </strong>
+        </p>
+        <p>
+          Choices: 
+          <strong>
+            1
+          </strong>
+        </p>
+      </a>
+    </div>
+    <div
+      className="card"
+    >
+      <a
+        href="/questions/5"
+        onClick={[Function]}
+        rel="noopener"
+        title="bjbjbjb"
+      >
+        <h3
+          className="card__title ellipsis"
+        >
+          bjbjbjb
+        </h3>
+        <p>
+          Published Date: 
+          <strong>
+            21/Jun/2020
+          </strong>
+        </p>
+        <p>
+          Choices: 
+          <strong>
+            2
+          </strong>
+        </p>
+      </a>
+    </div>
+  </div>
+</div>
+`;

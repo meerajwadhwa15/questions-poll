@@ -1,0 +1,17 @@
+.card {
+    background-color: $primary-background-color;
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border: 1px solid $brand-black;
+    color: $secondary-color;
+
+    &__title {
+        color: $brand-black;
+    }
+
+    &:hover {
+        background-color: $secondary-background-color;
+    }
+}

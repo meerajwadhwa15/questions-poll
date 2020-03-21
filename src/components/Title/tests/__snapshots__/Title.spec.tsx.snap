@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with Title 1`] = `
+<h1
+  className="page-title"
+>
+  Page title
+</h1>
+`;
