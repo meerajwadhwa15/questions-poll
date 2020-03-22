@@ -1,8 +1,10 @@
 @import 'variables';
 @import 'global';
 @import './../components/Loader/Loader.style.scss';
+@import './../components/Modal/Modal.style.scss';
 @import './../components/NoRecordFound/NoRecordFound.style.scss';
 @import './../components/Title/Title.style.scss';
 @import './../views/Questions/Questions.style.scss';
 @import './../views/QuestionDetail/components/Choice/Choice.style.scss';
 @import './../views/QuestionDetail/components/Detail/Detail.style.scss';
+@import './../views/Questions/components/Create/Create.style.scss';

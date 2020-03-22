@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { Loader, NoRecordFound } from "@/components";
 import { FetchQuestionActions } from "@/store/actions";
-import { Question } from "@/types/questions";
 import Detail from "./components/Detail";
 
 import {

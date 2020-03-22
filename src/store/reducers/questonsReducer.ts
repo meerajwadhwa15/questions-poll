@@ -21,16 +21,23 @@ const QuestionsReducer: Reducer<ReducerState, ReducerAction> = (
         questions
       };
     case Types.SET_FETCHING_DETAIL:
-      let question = action.isFetching === true ? null : state.questionDetail;
+      let questionDetailList = action.isFetching === true ? null : state.questionDetail;
       return {
         ...state,
         isFetchingDetail: action.isFetching,
-        questionDetail: question,
+        questionDetail: questionDetailList,
       };
     case Types.FETCH_QUESTIONS_SUCCESS:
       return {
         ...state,
         questions: action.questions
+      };
+    case Types.ADD_QUESTION_SUCCESS:
+      let questionsList = state.questions || [];
+      questionsList.push(action.question)
+      return {
+        ...state,
+        questions: [...questionsList]
       };
     case Types.FETCH_QUESTION_SUCCESS:
       return {

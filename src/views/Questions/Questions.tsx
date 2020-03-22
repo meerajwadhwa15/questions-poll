@@ -3,14 +3,16 @@ import { connect } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { Title, Loader, NoRecordFound } from "@/components";
 import QuestionsList from "./components/List";
-import { FetchQuestionsActions } from "@/store/actions";
+import QuestionCreate from "./components/Create";
+import { FetchQuestionsActions, AddQuestionActions } from "@/store/actions";
 
 import {
   StateProps,
   ReducerTypeList,
   ReducerStateList,
   DispatchPropsList,
-  ComponentProps
+  ComponentProps,
+  createQuestionPayload
 } from "@/types/questions";
 
 export const mapStateToProps = ({
@@ -25,6 +27,9 @@ export const mapDispatchToProps = (
 ): DispatchPropsList => ({
   fetchQuestions: () => {
     dispatch(FetchQuestionsActions());
+  },
+  addQuestion: (obj: createQuestionPayload) => {
+    dispatch(AddQuestionActions(obj));
   }
 });
 
@@ -38,11 +43,16 @@ class QuestionsListView extends Component<Props, StateProps> {
     }
   }
 
+  createQuestion = (obj: createQuestionPayload) => {
+    this.props.addQuestion(obj);
+  }
+
   render() {
     const { questions, isFetching } = this.props;
     return (
       <div>
         <Title>Questions</Title>
+          <QuestionCreate handleSubmit={this.createQuestion} />
         {isFetching ? (
           <Loader />
         ) : questions && questions.length ? (

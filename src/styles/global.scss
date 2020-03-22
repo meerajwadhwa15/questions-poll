@@ -35,3 +35,18 @@ p {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.btn {
+    padding: 10px;
+    border: 1px solid #000;
+
+    &--primary {
+        background-color: $primary-color;
+        color: #FFF;
+    }
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #000;
+}

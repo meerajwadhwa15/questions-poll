@@ -10,7 +10,10 @@ import {
   FetchErrorActionType,
   Types,
   FetchQuestionSuccessActionType,
-  FetchQuestionErrorActionType
+  FetchQuestionErrorActionType,
+  createQuestionPayload,
+  AddSuccessActionType,
+  AddErrorActionType
 } from "@/types/questions";
 
 export const isFetching = (isFetching: boolean): SetFetch => {
@@ -79,5 +82,31 @@ export const FetchQuestion = (id: number) => {
         const hideLoader: SetFetchDetail = isFetchingDetail(false);
         dispatch(hideLoader);
       });
+  };
+};
+
+export const AddQuestion = (obj: createQuestionPayload) => {
+  return async (dispatch: ThunkDispatch<{}, {}, AnyAction>): Promise<void> => {
+    const serverProps: ServerProps = {
+      url: FETCH_QUESTIONS,
+      method: 'POST',
+      params: {},
+      data: obj
+    };
+
+    return Fetch(serverProps)
+      .then((response: AxiosResponse) => {
+        const fetchSuccess: AddSuccessActionType = {
+          type: Types.ADD_QUESTION_SUCCESS,
+          question: response.data
+        };
+        dispatch(fetchSuccess);
+      })
+      .catch((err: AxiosError) => {
+        const fetchError: AddErrorActionType = {
+          type: Types.ADD_QUESTION_ERROR,
+        };
+        dispatch(fetchError);
+      })
   };
 };

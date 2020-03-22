@@ -21,7 +21,9 @@ export enum Types {
   FETCH_QUESTIONS_ERROR = "FETCH_QUESTIONS_ERROR",
   FETCH_QUESTION_SUCCESS = "FETCH_QUESTION_SUCCESS",
   FETCH_QUESTION_ERROR = "FETCH_QUESTION_ERROR",
-  SET_FETCHING_DETAIL = "SET_FETCHING_DETAIL"
+  SET_FETCHING_DETAIL = "SET_FETCHING_DETAIL",
+  ADD_QUESTION_SUCCESS = "ADD_QUESTION_SUCCESS",
+  ADD_QUESTION_ERROR = "ADD_QUESTION_ERROR"
 }
 
 export interface SetFetch {
@@ -51,6 +53,15 @@ export interface FetchQuestionSuccessActionType {
 export interface FetchQuestionErrorActionType {
   type: Types.FETCH_QUESTION_ERROR;
   question: null
+}
+
+export interface AddSuccessActionType {
+  type: Types.ADD_QUESTION_SUCCESS;
+  question: Question;
+}
+
+export interface AddErrorActionType {
+  type: Types.ADD_QUESTION_ERROR;
 }
 
 export interface ReducerStateList {
@@ -89,6 +100,7 @@ export interface ReducerTypeDetail {
 
 export interface DispatchPropsList {
   fetchQuestions: () => void;
+  addQuestion: (obj: createQuestionPayload) => void
 }
 
 export interface DispatchPropsDetail {
@@ -100,3 +112,5 @@ export type DispatchProps = DispatchPropsList & DispatchPropsDetail;
 export type StateProps = {};
 
 export interface ComponentProps {}
+
+export type createQuestionPayload = {question: string; choices: string[]};

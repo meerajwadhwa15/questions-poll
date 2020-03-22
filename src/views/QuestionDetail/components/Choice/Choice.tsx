@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-import { Anchor } from "@/components";
 import { Choice } from "@/types/questions";
 
 export type Props = {

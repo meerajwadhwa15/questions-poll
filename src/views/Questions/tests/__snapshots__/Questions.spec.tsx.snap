@@ -7,6 +7,118 @@ exports[`Questions Enzyme testing Matches the snapshot with QuestionsList 1`] = 
   >
     Questions
   </h1>
+  <div>
+    <div
+      className="modal"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <h2
+        className="modal__title"
+      >
+        Add Question
+         
+        <button
+          className="modal__close-button"
+          onClick={[Function]}
+        >
+          X
+        </button>
+      </h2>
+      <form
+        className="add-question"
+        onSubmit={[Function]}
+      >
+        <label
+          className="field"
+        >
+          <span>
+            Question:
+          </span>
+           
+          <input
+            name="question"
+            onChange={[Function]}
+            required={true}
+          />
+        </label>
+        <label
+          className="field"
+        >
+          <span>
+            Choice 1:
+          </span>
+           
+          <input
+            name="choice1"
+            onChange={[Function]}
+            required={true}
+          />
+        </label>
+        <label
+          className="field"
+        >
+          <span>
+            Choice 2:
+          </span>
+           
+          <input
+            name="choice2"
+            onChange={[Function]}
+            required={true}
+          />
+        </label>
+        <label
+          className="field"
+        >
+          <span>
+            Choice 3:
+          </span>
+           
+          <input
+            name="choice3"
+            onChange={[Function]}
+          />
+        </label>
+        <label
+          className="field"
+        >
+          <span>
+            Choice 4:
+          </span>
+           
+          <input
+            name="choice4"
+            onChange={[Function]}
+          />
+        </label>
+        <div
+          className="field actions"
+        >
+          <button
+            className="btn btn--primary"
+            type="submit"
+          >
+            Add
+          </button>
+          <input
+            className="btn"
+            type="reset"
+            value="Reset"
+          />
+        </div>
+      </form>
+    </div>
+    <button
+      className="add-question-btn btn btn--primary"
+      onClick={[Function]}
+    >
+      Add Question
+    </button>
+  </div>
   <div
     className="questions-list"
   >

@@ -1,0 +1,33 @@
+.add-question {
+    margin-top: 20px;
+    text-align: center;
+    
+    label {
+        color: #000;
+        display: block;
+
+        > span {
+            margin-right: 20px;
+        }
+    }
+
+    .btn {
+        margin-right: 15px;
+
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+    }
+}
+
+.field {
+    margin: 10px 0;
+
+    &.actions {
+            text-align: center;
+        }
+}
+
+.add-question-btn {
+    margin-bottom: 15px;
+}
