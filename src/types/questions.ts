@@ -1,21 +1,27 @@
-export type choice = {
+export type Choice = {
   choice: string;
   votes: number;
   url: string;
 };
 
-export type question = {
+export type Choices = Choice[];
+
+export type Question = {
+  id?: number;
   question: string;
   published_at: string;
   url: string;
-  choices: choice[];
+  choices: Choices;
 };
-export type questions = question[];
+export type Questions = Question[];
 
 export enum Types {
   SET_FETCHING = "SET_FETCHING",
   FETCH_QUESTIONS_SUCCESS = "FETCH_QUESTIONS_SUCCESS",
-  FETCH_QUESTIONS_ERROR = "FETCH_QUESTIONS_ERROR"
+  FETCH_QUESTIONS_ERROR = "FETCH_QUESTIONS_ERROR",
+  FETCH_QUESTION_SUCCESS = "FETCH_QUESTION_SUCCESS",
+  FETCH_QUESTION_ERROR = "FETCH_QUESTION_ERROR",
+  SET_FETCHING_DETAIL = "SET_FETCHING_DETAIL"
 }
 
 export interface SetFetch {
@@ -23,33 +29,73 @@ export interface SetFetch {
   isFetching: boolean;
 }
 
+export interface SetFetchDetail {
+  type: Types.SET_FETCHING_DETAIL;
+  isFetching: boolean;
+}
+
 export interface FetchSuccessActionType {
   type: Types.FETCH_QUESTIONS_SUCCESS;
-  questions: questions;
+  questions: Questions;
 }
 
 export interface FetchErrorActionType {
   type: Types.FETCH_QUESTIONS_ERROR;
 }
 
-export interface ReducerState {
-  isFetching: boolean;
-  questions: questions;
+export interface FetchQuestionSuccessActionType {
+  type: Types.FETCH_QUESTION_SUCCESS;
+  question: Question;
 }
 
-export interface ReducerAction {
+export interface FetchQuestionErrorActionType {
+  type: Types.FETCH_QUESTION_ERROR;
+  question: null
+}
+
+export interface ReducerStateList {
+  isFetching: boolean;
+  questions: Questions;
+}
+
+export interface ReducerStateDetail {
+  isFetchingDetail: boolean;
+  questionDetail: Question | null;
+}
+
+export type ReducerState = ReducerStateList & ReducerStateDetail;
+
+export interface ReducerActionList {
   type: string;
-  questions: questions;
+  questions: Questions;
   isFetching: boolean;
 }
 
-export interface ReducerType {
-  QuestionsReducers: ReducerState;
+export interface ReducerActionDetail {
+  type: string;
+  question: Question;
+  isFetchingDetail: boolean;
 }
 
-export interface DispatchProps {
+export type ReducerAction = ReducerActionList & ReducerActionDetail;
+
+export interface ReducerTypeList {
+  QuestionsReducers: ReducerStateList;
+}
+
+export interface ReducerTypeDetail {
+  QuestionsReducers: ReducerStateDetail;
+}
+
+export interface DispatchPropsList {
   fetchQuestions: () => void;
 }
+
+export interface DispatchPropsDetail {
+  fetchQuestion: (id: number) => void;
+}
+
+export type DispatchProps = DispatchPropsList & DispatchPropsDetail;
 
 export type StateProps = {};
 

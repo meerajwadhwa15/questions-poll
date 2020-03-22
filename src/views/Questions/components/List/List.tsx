@@ -1,15 +1,15 @@
 import React, { FunctionComponent } from "react";
 import Card from "./../Card";
-import { questions } from "@/types/questions";
+import { Questions } from "@/types/questions";
 
 export type Props = {
-  list: questions;
+  list: Questions;
 };
 
 const List: FunctionComponent<Props> = ({ list }) => (
   <div className="questions-list">
-    {list.map((question, index) => (
-      <Card key={index} question={question} />
+    {list.map(question => (
+      <Card key={question.url} question={question} />
     ))}
   </div>
 );

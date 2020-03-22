@@ -7,28 +7,28 @@ import { FetchQuestionsActions } from "@/store/actions";
 
 import {
   StateProps,
-  ReducerType,
-  ReducerState,
-  DispatchProps,
+  ReducerTypeList,
+  ReducerStateList,
+  DispatchPropsList,
   ComponentProps
 } from "@/types/questions";
 
 export const mapStateToProps = ({
   QuestionsReducers: { questions, isFetching }
-}: ReducerType): ReducerState => ({
+}: ReducerTypeList): ReducerStateList => ({
   questions,
   isFetching
 });
 
 export const mapDispatchToProps = (
   dispatch: ThunkDispatch<{}, {}, any>
-): DispatchProps => ({
+): DispatchPropsList => ({
   fetchQuestions: () => {
     dispatch(FetchQuestionsActions());
   }
 });
 
-export type Props = ComponentProps & ReducerState & DispatchProps;
+export type Props = ComponentProps & ReducerStateList & DispatchPropsList;
 
 class QuestionsListView extends Component<Props, StateProps> {
   componentDidMount() {
@@ -57,10 +57,10 @@ class QuestionsListView extends Component<Props, StateProps> {
 
 export { QuestionsListView };
 export default connect<
-  ReducerState,
-  DispatchProps,
+  ReducerStateList,
+  DispatchPropsList,
   ComponentProps,
-  ReducerType
+  ReducerTypeList
 >(
   mapStateToProps,
   mapDispatchToProps

@@ -14,4 +14,8 @@
     &:hover {
         background-color: $secondary-background-color;
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questions Enzyme testing Matches the snapshot with QuestionDetail 1`] = `
+<div>
+  <div
+    className="question-detail"
+  >
+    <h1
+      className="page-title"
+    >
+      Question: 
+      <strong>
+        Favourite programming language?
+      </strong>
+    </h1>
+    <p>
+      Published Date: 
+      <strong>
+        12/Jun/2020
+      </strong>
+    </p>
+    <div
+      className="choices"
+    >
+      <div
+        className="choice"
+      >
+        <div>
+          Choice: 
+          <strong>
+            Swift
+          </strong>
+        </div>
+        <div>
+          Votes: 
+          <strong>
+            39
+          </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

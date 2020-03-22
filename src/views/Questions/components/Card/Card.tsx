@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { Anchor } from "@/components";
-import { question } from "@/types/questions";
+import { Question } from "@/types/questions";
 import { dateFormater } from "@/utils";
 
 export type Props = {
-  question: question;
+  question: Question;
 };
 
 const List: FunctionComponent<Props> = ({

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with Questions Choice 1`] = `
+<div
+  className="choice"
+>
+  <div>
+    Choice: 
+    <strong>
+      Swift
+    </strong>
+  </div>
+  <div>
+    Votes: 
+    <strong>
+      39
+    </strong>
+  </div>
+</div>
+`;

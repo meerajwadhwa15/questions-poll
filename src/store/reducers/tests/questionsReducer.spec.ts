@@ -2,37 +2,37 @@ import Reducers, { initialState } from './../questonsReducer';
 import { ReducerState, ReducerAction, Types } from '@/types/questions';
 
 const questionsList = [
-    {
-      question: "Favourite programming language?",
-      published_at: "2020-03-12T12:42:40.310135+00:00",
-      url: "/questions/1",
-      choices: [
-        {
-          choice: "Swift",
-          votes: 39,
-          url: "/questions/1/choices/1"
-        }
-      ]
-    },
-    {
-      question: "bjbjbjb",
-      published_at: "2020-03-21T07:41:42.503695+00:00",
-      url: "/questions/5",
-      choices: [
-        {
-          choice: "g",
-          votes: 0,
-          url: "/questions/5/choices/14"
-        },
-        {
-          choice: "ik",
-          votes: 0,
-          url: "/questions/5/choices/15"
-        }
-      ]
-    }
-  ];
-  
+  {
+    question: "Favourite programming language?",
+    published_at: "2020-03-12T12:42:40.310135+00:00",
+    url: "/questions/1",
+    choices: [
+      {
+        choice: "Swift",
+        votes: 39,
+        url: "/questions/1/choices/1"
+      }
+    ]
+  },
+  {
+    question: "bjbjbjb",
+    published_at: "2020-03-21T07:41:42.503695+00:00",
+    url: "/questions/5",
+    choices: [
+      {
+        choice: "g",
+        votes: 0,
+        url: "/questions/5/choices/14"
+      },
+      {
+        choice: "ik",
+        votes: 0,
+        url: "/questions/5/choices/15"
+      }
+    ]
+  }
+];
+
 
 const setFetchAsLoading = {
   type: Types.SET_FETCHING,
@@ -53,7 +53,7 @@ const fetchQuestionsListErrorAction = {
   questions: []
 };
 
-describe('Questions Reducers Unit test', function() {
+describe('Questions Reducers Unit test', function () {
   test('should return the initial state', () => {
     expect(Reducers(initialState, { type: '' })).toEqual(initialState);
   });
